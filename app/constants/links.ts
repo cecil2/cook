@@ -1,5 +1,5 @@
 export const links = {
-  cook: 'https://cecil2.github.io/cook/',
+  cook: '/',
 
   /**
    * 菜谱投稿链接

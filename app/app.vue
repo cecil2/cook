@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// import { installPrompt } from './utils/pwa'
 import { isClient } from '@vueuse/core'
 import { useIndexedDB } from '~/composables/db'
 import { appName } from '~/constants'
@@ -30,8 +29,6 @@ onMounted(() => {
 
     indexedDB.init()
   }
-
-  // installPrompt()
 })
 </script>
 

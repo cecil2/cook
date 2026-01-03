@@ -5,6 +5,7 @@ import { links } from '~/constants'
 <template>
   <div>
     <a
+      v-if="links.contribute"
       m="2"
       class="feedback-button"
       :href="links.contribute" target="_blank"
@@ -14,6 +15,7 @@ import { links } from '~/constants'
     </a>
 
     <a
+      v-if="links.feedback"
       m="2"
       class="feedback-button"
       :href="links.feedback" target="_blank"

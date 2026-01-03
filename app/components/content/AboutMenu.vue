@@ -7,9 +7,5 @@
     <NuxtLink class="icon-btn mx-2 hover:text-blue-400" to="/about" title="关于">
       <div i-ri-information-line />
     </NuxtLink>
-
-    <a class="icon-btn mx-2 hover:text-pink-400" rel="noreferrer" href="https://space.bilibili.com/1579790" target="_blank" title="BiliBili">
-      <div i-ri-bilibili-line />
-    </a>
   </div>
 </template>
