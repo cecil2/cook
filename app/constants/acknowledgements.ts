@@ -69,7 +69,7 @@ export const acknowledgements: Acknowledgement[] = [
       {
         type: 'github',
         label: 'Contributors',
-        href: 'https://github.com/YunYouJun/cook/graphs/contributors',
+        href: 'https://github.com/cecil2/cook/graphs/contributors',
         target: '_blank',
       },
     ],

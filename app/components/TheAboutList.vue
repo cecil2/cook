@@ -1,18 +1,9 @@
 <script lang="ts" setup>
-import { isClient } from '@vueuse/core'
 import pkg from '~/../package.json'
-import { icp } from '../constants'
-
-const displayICP = ref(true)
 
 const commitSha = (import.meta.env.VITE_COMMIT_REF || '').slice(0, 7)
 const date = import.meta.env.VITE_APP_BUILD_DATE
-const buildDate = (new Date(date)).toLocaleDateString()
-
-onBeforeMount(() => {
-  if (isClient)
-    displayICP.value = ['cook.yunyoujun.cn', 'localhost', '127.0.0.1'].includes(window.location.hostname)
-})
+const buildDate = date ? (new Date(date)).toLocaleDateString() : new Date().toLocaleDateString()
 </script>
 
 <template>
@@ -30,28 +21,18 @@ onBeforeMount(() => {
 
       <a
         v-if="commitSha"
-        :href="`https://github.com/YunYouJun/cook/commit/${commitSha}`"
+        :href="`https://github.com/cecil2/cook/commit/${commitSha}`"
         target="_blank"
         class="flex items-center justify-between p-4 transition hover:bg-gray-50 dark:hover:bg-gray-700/50"
       >
         <span class="text-gray-900 font-medium dark:text-gray-100">Commit Hash</span>
         <span class="text-gray-500">{{ commitSha }}</span>
       </a>
-
-      <a
-        v-if="displayICP"
-        href="https://beian.miit.gov.cn/"
-        target="_blank"
-        class="flex items-center justify-between p-4 transition hover:bg-gray-50 dark:hover:bg-gray-700/50"
-      >
-        <span class="text-gray-900 font-medium dark:text-gray-100">备案号</span>
-        <span class="text-gray-500">{{ icp }}</span>
-      </a>
     </div>
 
     <div class="overflow-hidden border rounded-xl bg-white shadow-sm divide-y dark:border-gray-700 dark:bg-gray-800 dark:divide-gray-700">
       <a
-        href="https://www.bilibili.com/blackboard/dynamic/306882"
+        href="https://www.bilibili.com"
         target="_blank"
         class="flex items-center justify-between p-4 transition hover:bg-gray-50 dark:hover:bg-gray-700/50"
       >
@@ -63,7 +44,7 @@ onBeforeMount(() => {
       </a>
 
       <a
-        href="https://github.com/YunYouJun/cook"
+        href="https://github.com/cecil2/cook"
         target="_blank"
         class="flex items-center justify-between p-4 transition hover:bg-gray-50 dark:hover:bg-gray-700/50"
       >
@@ -73,14 +54,6 @@ onBeforeMount(() => {
           <span class="text-sm">GitHub</span>
         </div>
       </a>
-
-      <NuxtLink
-        to="/about/me"
-        class="flex items-center justify-between p-4 transition hover:bg-gray-50 dark:hover:bg-gray-700/50"
-      >
-        <span class="text-gray-900 font-medium dark:text-gray-100">项目作者</span>
-        <span class="text-gray-500">云游君</span>
-      </NuxtLink>
 
       <NuxtLink
         to="/about/acknowledgements"

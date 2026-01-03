@@ -12,7 +12,7 @@ const buildDate = (new Date(date)).toLocaleDateString()
       当前版本 v{{ pkg.version }}（{{ buildDate }}）:
     </span>
     <span>
-      <a border="b-1 dashed" :href="`https://github.com/YunYouJun/cook/commit/${commitSha}`" target="_blank" alt="Cook | GitHub Commit">
+      <a border="b-1 dashed" :href="`https://github.com/cecil2/cook/commit/${commitSha}`" target="_blank" alt="Cook | GitHub Commit">
         {{ commitSha }}
       </a>
     </span>

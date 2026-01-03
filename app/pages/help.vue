@@ -33,11 +33,8 @@
       </FAQItem>
 
       <FAQItem title="是否有微信小程序?">
-        因不可抗力（小程序因跳转 B 站视频而被判定为导流违规）下架。
+        因不可抗力下架。
         将不再提供小程序版本。
-        <br>
-        <br>
-        搜索微信公众号<b>「云游君」</b>并发送<b>「做菜」</b>，也可以快速找到本网站。
       </FAQItem>
 
       <FAQItem title="是否有 APP?">
@@ -46,17 +43,6 @@
 
       <FAQItem title="未来是否会收费？">
         该项目将以免费开源的形式运营。
-        <br>
-        您可以考虑赞助本项目，以支持我们的开发。
-        我会将其投入在周边的服务器、域名、CDN 等费用上。
-        <ul class="mt-2 space-y-1">
-          <li>
-            <a href="https://afdian.net/a/yunyoujun" target="_blank" class="text-green-600 hover:underline">爱发电赞助</a>
-          </li>
-          <li>
-            <a href="https://sponsors.yunyoujun.cn/" target="_blank" class="text-green-600 hover:underline">我要直接打钱！</a>
-          </li>
-        </ul>
       </FAQItem>
 
       <FAQItem title="页面无法点击、资源加载失败？">
@@ -89,18 +75,6 @@
       <hr class="my-8 h-px border-0 bg-gray-200 dark:bg-gray-700">
 
       <HelpAbout />
-
-      <FAQItem title="关于我">
-        <div class="text-left">
-          我的个人微信公众号「云游君」，会分享一些生活和写的<a href="https://sponsors.yunyoujun.cn/projects" target="_blank" class="text-green-600 hover:underline">
-            小玩具们
-          </a>。
-
-          <a class="block py-4" href="https://cdn.yunyoujun.cn/img/about/white-qrcode-and-search.jpg" target="_blank">
-            <img class="mx-auto max-w-xs rounded shadow-lg" src="https://cdn.yunyoujun.cn/img/about/white-qrcode-and-search.jpg" alt="云游君">
-          </a>
-        </div>
-      </FAQItem>
     </div>
   </div>
 </template>

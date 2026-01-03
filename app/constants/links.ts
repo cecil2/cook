@@ -1,41 +1,36 @@
 export const links = {
-  cook: 'https://cook.yunyoujun.cn',
+  cook: 'https://cecil2.github.io/cook/',
 
   /**
    * 菜谱投稿链接
    */
-  contribute: 'https://docs.qq.com/form/page/DWk9GWW9oTmlXZU9V',
+  contribute: 'https://github.com/cecil2/cook/issues',
   /**
-   * 兔小巢反馈
+   * 反馈
    */
-  feedback: 'https://support.qq.com/product/507827',
-  githubIssue: 'https://github.com/YunYouJun/cook/issues',
-  githubDiscussions: 'https://github.com/YunYouJun/cook/discussions',
+  feedback: 'https://github.com/cecil2/cook/issues',
+  githubIssue: 'https://github.com/cecil2/cook/issues',
+  githubDiscussions: 'https://github.com/cecil2/cook/discussions',
 
   /**
    * changelog
    */
-  changelog: 'https://docs.yunyoujun.cn/projects/cook/changelog',
-  releaseNotes: 'https://github.com/YunYouJun/cook/releases',
-
-  /**
-   * 企业微信 云乐坊 kf
-   */
-  wecomKf: 'https://work.weixin.qq.com/kfid/kfc9d4dcc4b6bd1c69e',
+  changelog: 'https://github.com/cecil2/cook/blob/main/CHANGELOG.md',
+  releaseNotes: 'https://github.com/cecil2/cook/releases',
 
   /**
    * author
    */
   yyj: {
-    bilibili: 'https://space.bilibili.com/1579790',
-    bilibiliOpus: 'https://www.bilibili.com/opus/649847454294868008',
-    github: 'https://github.com/YunYouJun',
-    blog: 'https://www.yunyoujun.cn',
+    bilibili: 'https://github.com/cecil2',
+    bilibiliOpus: 'https://github.com/cecil2',
+    github: 'https://github.com/cecil2',
+    blog: 'https://github.com/cecil2',
 
-    mp: 'https://mp.weixin.qq.com/s/Qdx76v1d0EwRLuX_rYtHFw',
+    mp: 'https://github.com/cecil2',
     /**
-     * 关于食用手册的前世今生与未来
+     * 关于食用手册
      */
-    mpArticle: 'https://mp.weixin.qq.com/s/Qdx76v1d0EwRLuX_rYtHFw',
+    mpArticle: 'https://github.com/cecil2/cook',
   },
 }

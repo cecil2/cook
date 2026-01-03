@@ -1,95 +1,38 @@
 # Cook
 
 > 好的，今天我们来做菜 🥬
-> Note: This is primarily a Chinese project and we do not intend to translate to English due to the fact that all the ingredients we are familiar with are in Chinese.
 
-## 版本
+本项目是一个简单的菜谱搜索工具，旨在帮助用户在食材有限的情况下找到可以制作的菜谱。
 
-[![Release](https://github.com/YunYouJun/cook/actions/workflows/release.yml/badge.svg)](https://github.com/YunYouJun/cook/actions/workflows/release.yml)
+## 部署与访问
 
-### 网页版本
-
-- 网站链接（Cloudflare）：[cook.yunyoujun.cn](https://cook.yunyoujun.cn)
-  - 国内加速（腾讯云）：[cook.yunle.fun](https://cook.yunle.fun)
-- 备用（Netlify）：[cook.yyj.moe](https://cook.yyj.moe)
-- 开发版（Vercel）：[cook.yunle.app](https://cook.yunle.app)
-
-### 小程序版本
-
-~~本仓库为网页版本，小程序版本请在微信搜索「来做菜」。~~
-
-因不可抗力，小程序因跳转 B 站视频而被判定为导流违规下架。
-将不再提供小程序版本。
-
-<!-- ![微信小程序版本](./public/search-cook.png) -->
-
-## 说明
-
-本项目初衷是方便特殊时期隔离在家而材料有限的小伙伴，因此菜谱材料会尽量限制在特定范围内。
-
-更多可参见 [来做菜 | 关于](https://cook.yunyoujun.cn/about)。
-
-欢迎反馈更多菜谱数据：
-
-- 相关链接
-  - [居家菜谱投稿](https://docs.qq.com/form/page/DWk9GWW9oTmlXZU9V)
-  - [反馈建议分享-兔小巢](https://support.qq.com/products/507827)
-
-### Features
-
-~~本项目支持 PWA，使用浏览器打开时，可将其添加到主屏幕以获得近原生 APP 的体验。~~
-
-我们正在开发新的 APP 版本，敬请期待。
+本项目已部署在 GitHub Pages：[https://cecil2.github.io/cook/](https://cecil2.github.io/cook/)
 
 ## 开发
 
+本项目基于 Nuxt 3 开发。
+
 ```bash
-# install dependencies
+# 安装依赖
 pnpm install
 
-# convert csv to json
-# automatically executed when postinstall
+# 转换数据 (CSV to JSON)
 pnpm convert
 
-# start
+# 启动开发服务器
 pnpm dev
-# http://localhost:3333
 ```
-
-### 开发 APP
-
-> [Local Development](https://ionic.nuxtjs.org/cookbook/local-development)
 
 ## 部署
 
-### Docker
+### Vercel
 
-```bash
-# 从 Docker Hub 拉取最新的镜像
-docker pull yunyoujun/cook:latest
-# 新建并启动容器，然后打开 http://localhost:3333
-docker run -it -d --name cook -p 8080:80 yunyoujun/cook:latest
+本项目支持一键部署到 Vercel。
 
-# 启动与停止
-docker start cook
-docker stop cook
-```
+### GitHub Pages
 
-## 致谢
+本项目配置了 GitHub Actions，推送到 `main` 分支后会自动部署到 GitHub Pages。
 
-感谢以下小伙伴为本项目提供的数据支持和 QA ！
+## 许可证
 
-- [Runny](https://weibo.com/runny)
-- 麒麟
-- 晴方啾
-- 课代表阿伟
-
-## [Sponsors](https://sponsors.yunyoujun.cn)
-
-感谢至今以来的所有赞助者们！因为你们的支持让我更有动力去做各种尝试。
-
-<p align="center">
-  <a href="https://cdn.jsdelivr.net/gh/YunYouJun/sponsors/public/sponsors.svg">
-    <img src='https://cdn.jsdelivr.net/gh/YunYouJun/sponsors/public/sponsors.svg'/>
-  </a>
-</p>
+[MIT](./LICENSE)

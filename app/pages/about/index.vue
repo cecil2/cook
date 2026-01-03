@@ -21,23 +21,7 @@ import { links } from '~/constants'
           <div class="text-gray-900 font-medium dark:text-gray-100">网页版本</div>
           <div class="flex items-center text-gray-500">
             <div i-ri-global-line class="mr-2" />
-            <span class="text-sm">cook.yunyoujun.cn</span>
-          </div>
-        </a>
-
-        <a :href="links.yyj.bilibiliOpus" target="_blank" class="flex items-center justify-between p-4 transition hover:bg-gray-50 dark:hover:bg-gray-700/50">
-          <div class="text-gray-900 font-medium dark:text-gray-100">旅程的起点</div>
-          <div class="flex items-center text-gray-500">
-            <div i-ri-bilibili-line class="mr-2" />
-            <span class="text-sm">动态</span>
-          </div>
-        </a>
-
-        <a :href="links.yyj.mpArticle" target="_blank" class="flex items-center justify-between p-4 transition hover:bg-gray-50 dark:hover:bg-gray-700/50">
-          <div class="text-gray-900 font-medium dark:text-gray-100">关于食用手册的前世今生</div>
-          <div class="flex items-center text-gray-500">
-            <div i-ri-wechat-2-line class="mr-2" />
-            <span class="text-sm">文章</span>
+            <span class="text-sm">cecil2.github.io/cook</span>
           </div>
         </a>
       </div>
