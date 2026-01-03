@@ -8,5 +8,3 @@ export const icp = '苏ICP备17038157号'
 
 export * from './acknowledgements'
 export * from './links'
-
-export const ionDarkClass = 'ion-palette-dark'

@@ -58,19 +58,15 @@ function toggleStuff(item: StuffItem, category = '', _e?: Event) {
     </h2>
 
     <!-- 食物相克警告提示 -->
-    <ion-toast
-      class="incompatible-warning-toast"
-      :message="warningMessage"
-      :is-open="hasWarning"
-      position="top"
-      :icon="ioniconsWarningOutline"
-      animated
+    <div
+      v-if="hasWarning"
+      class="fixed left-1/2 top-4 z-50 max-w-md w-[90%] transition-all duration-300 -translate-x-1/2"
     >
       <div
-        v-if="hasWarning"
         class="incompatible-warning-box"
         m="b-4" p="4"
         border="~ 2 red-300 dark:red-600 rounded-xl"
+        bg="red-50 dark:red-900/80"
         text="red-800 dark:red-200 sm"
         shadow="lg"
         relative="~"
@@ -88,9 +84,12 @@ function toggleStuff(item: StuffItem, category = '', _e?: Event) {
               {{ warningMessage }}
             </div>
           </div>
+          <button class="flex-shrink-0" @click="hasWarning = false">
+            <div i-mdi-close />
+          </button>
         </div>
       </div>
-    </ion-toast>
+    </div>
 
     <div>
       <h2 opacity="90" text="base" font="bold" p="1">
@@ -169,12 +168,5 @@ function toggleStuff(item: StuffItem, category = '', _e?: Event) {
   </Transition>
 </template>
 
-<style>
-ion-toast.incompatible-warning-toast {
-  /* --background: #f4f4fa; */
-  --box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
-  /* --color: #4b4a50; */
-  --background: rgba(254, 202, 202, 0.95);
-  --color: #7f1d1d;
-}
+<style scoped>
 </style>

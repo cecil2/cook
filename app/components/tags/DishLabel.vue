@@ -15,13 +15,13 @@ const dishEmojis = computed(() => {
 
 <template>
   <span class="inline-flex items-center gap-1">
-    <ion-label>
+    <span>
       {{ dish.tags?.includes('杂烩') ? '🍲' : dishEmojis.join(' ') }}
-    </ion-label>
+    </span>
 
-    <ion-label>
+    <span>
       {{ dish.name }}
-    </ion-label>
+    </span>
 
     <template v-for="tool, i in tools">
       <span

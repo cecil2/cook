@@ -31,86 +31,76 @@ function getPersonKey(person: PersonalAcknowledgement, index: number): string {
 </script>
 
 <template>
-  <ion-page>
-    <ion-header>
-      <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-back-button default-href="/about" />
-        </ion-buttons>
-        <ion-title>致谢</ion-title>
-      </ion-toolbar>
-    </ion-header>
+  <div class="p-4">
+    <div class="mb-6 flex items-center">
+      <NuxtLink to="/my" class="mr-4 text-gray-500 transition hover:text-gray-700">
+        <div i-mdi-arrow-left class="text-2xl" />
+      </NuxtLink>
+      <h2 class="text-xl font-bold">
+        致谢
+      </h2>
+    </div>
 
-    <ion-content>
-      <!-- 个人致谢名单 -->
-      <ion-list-header>
-        <ion-label class="text-sm op-50">
-          感谢以下朋友在项目早期的支持与帮助
-        </ion-label>
-      </ion-list-header>
-      <ion-list v-if="personalAcknowledgements.length > 0" :inset="true">
-        <!-- 使用 ion-item 展示每个个人 -->
-        <ion-item
+    <!-- 个人致谢名单 -->
+    <div class="mb-8">
+      <h3 class="mb-3 px-2 text-sm text-gray-400 tracking-wider uppercase">
+        感谢以下朋友在项目早期的支持与帮助
+      </h3>
+      <div class="overflow-hidden border rounded-xl bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800">
+        <div
           v-for="(person, index) in personalAcknowledgements"
           :key="getPersonKey(person, index)"
-          :href="person.link"
-          :target="person.link ? '_blank' : undefined"
-          :button="!!person.link"
-          :detail="!!person.link"
-          lines="full"
+          class="border-b last:border-b-0 dark:border-gray-700"
         >
-          <div slot="start" class="h-6 w-6 inline-flex items-center justify-center text-5 color-[var(--ion-color-medium)]" i-ri-user-3-line />
-          <ion-label>
-            <h3 class="m-0 text-[17px] color-[var(--ion-text-color)] font-normal">
-              {{ person.name }}
-            </h3>
-          </ion-label>
-        </ion-item>
-      </ion-list>
-
-      <!-- 团队/组织致谢 -->
-      <template v-for="(ack, index) in acknowledgements" :key="index">
-        <ion-list-header>
-          <ion-label class="tracking-wide uppercase opacity-50 text-[13px]! font-medium!">
-            {{ ack.description }}
-          </ion-label>
-        </ion-list-header>
-        <ion-list :inset="true">
-          <!-- 链接列表 -->
-          <ion-item
-            v-for="(link, linkIndex) in ack.links"
-            :key="getLinkKey(index, linkIndex)"
-            :href="link.href"
-            :target="link.target || '_blank'"
-            :detail="true"
-            button
+          <component
+            :is="person.link ? 'a' : 'div'"
+            :href="person.link"
+            target="_blank"
+            class="flex cursor-pointer items-center p-4 transition hover:bg-gray-50 dark:hover:bg-gray-700/50"
+            :class="{ 'pointer-events-none': !person.link }"
           >
-            <div v-if="link.type" slot="start" class="inline-flex" :class="getIconClass(link.type)" />
-            <ion-label>{{ link.label }}</ion-label>
-          </ion-item>
-        </ion-list>
-      </template>
-
-      <!-- 底部说明 -->
-      <div class="px-4 pb-8 pt-4">
-        <p class="m-0 text-center text-[13px] leading-[1.4] opacity-50">
-          感谢所有支持和帮助过本项目的人们 ❤️
-        </p>
+            <div class="mr-3 h-8 w-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-400 dark:bg-gray-700">
+              <div i-ri-user-3-line class="text-lg" />
+            </div>
+            <div class="flex-1 text-gray-900 font-medium dark:text-gray-100">
+              {{ person.name }}
+            </div>
+            <div v-if="person.link" i-mdi-chevron-right class="text-gray-400" />
+          </component>
+        </div>
       </div>
-    </ion-content>
-  </ion-page>
+    </div>
+
+    <!-- 团队/组织致谢 -->
+    <div v-for="(ack, index) in acknowledgements" :key="index" class="mb-8">
+      <h3 class="mb-3 px-2 text-sm text-gray-400 tracking-wider uppercase">
+        {{ ack.description }}
+      </h3>
+      <div class="overflow-hidden border rounded-xl bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800">
+        <a
+          v-for="(link, linkIndex) in ack.links"
+          :key="getLinkKey(index, linkIndex)"
+          :href="link.href"
+          target="_blank"
+          class="flex items-center border-b p-4 transition last:border-b-0 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50"
+        >
+          <div v-if="link.type" class="mr-3 h-8 w-8 flex items-center justify-center text-gray-400">
+            <div :class="getIconClass(link.type)" class="text-xl" />
+          </div>
+          <div class="flex-1 text-gray-900 font-medium dark:text-gray-100">
+            {{ link.label }}
+          </div>
+          <div i-mdi-chevron-right class="text-gray-400" />
+        </a>
+      </div>
+    </div>
+
+    <!-- 底部说明 -->
+    <div class="py-8 text-center text-sm text-gray-400">
+      感谢所有支持和帮助过本项目的人们 ❤️
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
-ion-list-header {
-  ion-label {
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-}
-
-ion-list {
-  margin-top: 8px !important;
-  margin-bottom: 8px !important;
-}
 </style>

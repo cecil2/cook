@@ -97,18 +97,6 @@ export const acknowledgements: Acknowledgement[] = [
       },
       {
         type: 'website',
-        label: 'Ionic Framework',
-        href: 'https://ionicframework.com',
-        target: '_blank',
-      },
-      {
-        type: 'website',
-        label: 'Capacitor',
-        href: 'https://capacitorjs.com',
-        target: '_blank',
-      },
-      {
-        type: 'website',
         label: 'VueUse',
         href: 'https://vueuse.org',
         target: '_blank',

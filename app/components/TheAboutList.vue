@@ -16,54 +16,79 @@ onBeforeMount(() => {
 </script>
 
 <template>
-  <ion-list :inset="true">
-    <ion-item>
-      <ion-label>当前版本</ion-label>
-      <ion-text>v{{ pkg.version }}</ion-text>
-    </ion-item>
+  <div class="space-y-4">
+    <div class="overflow-hidden border rounded-xl bg-white shadow-sm divide-y dark:border-gray-700 dark:bg-gray-800 dark:divide-gray-700">
+      <div class="flex items-center justify-between p-4">
+        <span class="text-gray-900 font-medium dark:text-gray-100">当前版本</span>
+        <span class="text-gray-500">v{{ pkg.version }}</span>
+      </div>
 
-    <ion-item>
-      <ion-label>构建时间</ion-label>
-      <ion-text>{{ buildDate }}</ion-text>
-    </ion-item>
+      <div class="flex items-center justify-between p-4">
+        <span class="text-gray-900 font-medium dark:text-gray-100">构建时间</span>
+        <span class="text-gray-500">{{ buildDate }}</span>
+      </div>
 
-    <ion-item v-if="commitSha" :href="`https://github.com/YunYouJun/cook/commit/${commitSha}`" target="_blank">
-      <ion-label>Commit Hash</ion-label>
-      <ion-text>{{ commitSha }}</ion-text>
-    </ion-item>
+      <a
+        v-if="commitSha"
+        :href="`https://github.com/YunYouJun/cook/commit/${commitSha}`"
+        target="_blank"
+        class="flex items-center justify-between p-4 transition hover:bg-gray-50 dark:hover:bg-gray-700/50"
+      >
+        <span class="text-gray-900 font-medium dark:text-gray-100">Commit Hash</span>
+        <span class="text-gray-500">{{ commitSha }}</span>
+      </a>
 
-    <ion-item v-if="displayICP" href="https://beian.miit.gov.cn/" target="_blank">
-      <ion-label>备案号</ion-label>
-      <ion-text>{{ icp }}</ion-text>
-    </ion-item>
-  </ion-list>
+      <a
+        v-if="displayICP"
+        href="https://beian.miit.gov.cn/"
+        target="_blank"
+        class="flex items-center justify-between p-4 transition hover:bg-gray-50 dark:hover:bg-gray-700/50"
+      >
+        <span class="text-gray-900 font-medium dark:text-gray-100">备案号</span>
+        <span class="text-gray-500">{{ icp }}</span>
+      </a>
+    </div>
 
-  <ion-list :inset="true">
-    <ion-item href="https://www.bilibili.com/blackboard/dynamic/306882" target="_blank">
-      <ion-label>数据来源</ion-label>
-      <ion-text class="inline-flex items-center justify-center">
-        <div class="inline-flex" i-ri-bilibili-line />
-        <span m="l-1" class="inline-flex">哔哩哔哩</span>
-      </ion-text>
-    </ion-item>
+    <div class="overflow-hidden border rounded-xl bg-white shadow-sm divide-y dark:border-gray-700 dark:bg-gray-800 dark:divide-gray-700">
+      <a
+        href="https://www.bilibili.com/blackboard/dynamic/306882"
+        target="_blank"
+        class="flex items-center justify-between p-4 transition hover:bg-gray-50 dark:hover:bg-gray-700/50"
+      >
+        <span class="text-gray-900 font-medium dark:text-gray-100">数据来源</span>
+        <div class="flex items-center text-gray-500">
+          <div i-ri-bilibili-line class="mr-2" />
+          <span class="text-sm">哔哩哔哩</span>
+        </div>
+      </a>
 
-    <ion-item href="https://github.com/YunYouJun/cook" target="_blank">
-      <ion-label>开源代码</ion-label>
-      <ion-text class="inline-flex items-center justify-center">
-        <div class="inline-flex" i-ri-github-line />
-        <span m="l-1" class="inline-flex">GitHub</span>
-      </ion-text>
-    </ion-item>
+      <a
+        href="https://github.com/YunYouJun/cook"
+        target="_blank"
+        class="flex items-center justify-between p-4 transition hover:bg-gray-50 dark:hover:bg-gray-700/50"
+      >
+        <span class="text-gray-900 font-medium dark:text-gray-100">开源代码</span>
+        <div class="flex items-center text-gray-500">
+          <div i-ri-github-line class="mr-2" />
+          <span class="text-sm">GitHub</span>
+        </div>
+      </a>
 
-    <ion-item router-link="/about/me">
-      <ion-label>项目作者</ion-label>
-      <ion-text class="inline-flex items-center justify-center">
-        云游君
-      </ion-text>
-    </ion-item>
+      <NuxtLink
+        to="/about/me"
+        class="flex items-center justify-between p-4 transition hover:bg-gray-50 dark:hover:bg-gray-700/50"
+      >
+        <span class="text-gray-900 font-medium dark:text-gray-100">项目作者</span>
+        <span class="text-gray-500">云游君</span>
+      </NuxtLink>
 
-    <ion-item router-link="/about/acknowledgements">
-      <ion-label>致谢名单</ion-label>
-    </ion-item>
-  </ion-list>
+      <NuxtLink
+        to="/about/acknowledgements"
+        class="flex items-center justify-between p-4 transition hover:bg-gray-50 dark:hover:bg-gray-700/50"
+      >
+        <span class="text-gray-900 font-medium dark:text-gray-100">致谢名单</span>
+        <div i-mdi-chevron-right class="text-gray-400" />
+      </NuxtLink>
+    </div>
+  </div>
 </template>

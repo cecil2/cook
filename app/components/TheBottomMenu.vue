@@ -30,7 +30,7 @@ const items: BottomMenuItem[] = [
     icon: 'i-ri-user-line',
     activeIcon: 'i-ri-user-fill',
     title: '我的',
-    to: '/user',
+    to: '/my',
   },
 ]
 

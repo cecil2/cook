@@ -39,7 +39,6 @@ export default defineNuxtConfig({
     // See https://github.com/unjs/ofetch/pull/366
     // 'nuxt-fix-ofetch',
     '@nuxt/scripts',
-    '@nuxtjs/ionic',
   ],
   ssr: false,
 
@@ -52,6 +51,7 @@ export default defineNuxtConfig({
   },
 
   app: {
+    baseURL: process.env.NUXT_APP_BASE_URL || '/',
     head: {
       viewport: 'width=device-width,initial-scale=1',
       link: [
@@ -118,18 +118,6 @@ export default defineNuxtConfig({
       nuxt: {
         sortConfigKeys: true,
       },
-    },
-  },
-
-  ionic: {
-    css: {
-      core: true,
-      basic: true,
-      utilities: true,
-    },
-    config: {
-      mode: 'ios',
-      backButtonText: '返回',
     },
   },
 

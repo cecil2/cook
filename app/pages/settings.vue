@@ -9,46 +9,43 @@ definePageMeta({
 </script>
 
 <template>
-  <ion-page>
-    <ion-header>
-      <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-back-button default-href="/my" />
-        </ion-buttons>
-        <ion-title>设置</ion-title>
-        <!-- <ion-buttons slot="end">
-          <ion-button color="dark">
-            <ion-icon slot="icon-only" :icon="ioniconsPersonCircleOutline" />
-          </ion-button>
-        </ion-buttons> -->
-      </ion-toolbar>
-    </ion-header>
+  <div class="p-4">
+    <div class="mb-6 flex items-center">
+      <NuxtLink to="/my" class="mr-4 text-gray-500 transition hover:text-gray-700">
+        <div i-mdi-arrow-left class="text-2xl" />
+      </NuxtLink>
+      <h2 class="text-xl font-bold">
+        设置
+      </h2>
+    </div>
 
-    <ion-content>
-      <ion-list-header>外观</ion-list-header>
-      <ion-list :inset="true">
-        <ion-item>
-          <ion-toggle :checked="isDark" justify="space-between" @ion-change="toggleDark">
-            暗色模式
-          </ion-toggle>
-        </ion-item>
-      </ion-list>
+    <div class="space-y-6">
+      <section>
+        <h3 class="mb-2 px-1 text-sm text-gray-500 font-medium tracking-wider uppercase">
+          外观
+        </h3>
+        <div class="border rounded bg-white dark:border-gray-700 dark:bg-gray-800">
+          <div class="flex items-center justify-between p-4">
+            <span>暗色模式</span>
+            <YlfSwitch :model-value="isDark" @update:model-value="toggleDark" />
+          </div>
+        </div>
+      </section>
 
-      <ion-list-header>数据</ion-list-header>
-      <ion-list :inset="true">
-        <ion-item>
-          <ion-toggle v-model:checked="app.settings.keepLocalData" justify="space-between">
-            离开网页后保留选中数据
-          </ion-toggle>
-        </ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-page>
+      <section>
+        <h3 class="mb-2 px-1 text-sm text-gray-500 font-medium tracking-wider uppercase">
+          数据
+        </h3>
+        <div class="border rounded bg-white dark:border-gray-700 dark:bg-gray-800">
+          <div class="flex items-center justify-between p-4">
+            <span>离开网页后保留选中数据</span>
+            <YlfSwitch v-model="app.settings.keepLocalData" />
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
 </template>
 
-<style>
-/* (Optional) This is added to prevent the flashing that happens when toggling between palettes */
-ion-item {
-  --transition: none;
-}
+<style scoped>
 </style>
