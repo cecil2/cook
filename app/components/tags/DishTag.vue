@@ -9,23 +9,10 @@ const props = defineProps<{
   dish: RecipeItem | DbRecipeItem
 }>()
 
-const { proxy } = useScriptGoogleTagManager()
-
 function triggerGtm(dish: RecipeItem) {
   recipeHistories.value.push({
     recipe: dish,
     time: Date.now(),
-  })
-
-  proxy.dataLayer.push({
-    event: 'click',
-    category: `dish_${dish.name}`,
-    action: 'click_recipe',
-    label: '跳转菜谱',
-  })
-  proxy.dataLayer.push({
-    event: 'click_dish',
-    action: dish.name,
   })
 }
 

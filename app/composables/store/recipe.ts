@@ -15,7 +15,6 @@ const namespace = 'cook'
 export type SearchMode = 'survival' | 'loose' | 'strict'
 
 export const useRecipeStore = defineStore('recipe', () => {
-  const { proxy } = useScriptGoogleTagManager()
   const { settings } = useAppStore()
 
   /**
@@ -134,17 +133,6 @@ export const useRecipeStore = defineStore('recipe', () => {
   const clickTool = (item: StuffItem) => {
     const value = item.name
     toggleTools(value)
-
-    proxy.dataLayer.push({
-      event: 'click',
-      category: `tool_${value}`,
-      action: 'click_tool',
-      label: '工具',
-    })
-    proxy.dataLayer.push({
-      event: 'click_tool',
-      action: item.name,
-    })
   }
 
   const recipesLength = ref(0)

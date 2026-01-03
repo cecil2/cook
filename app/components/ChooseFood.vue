@@ -16,8 +16,6 @@ const { warningMessage, hasWarning, checkIncompatibility } = useIncompatibleFood
 const recipeBtnRef = ref<HTMLButtonElement>()
 const { playAnimation } = useEmojiAnimation(recipeBtnRef)
 
-const { proxy } = useScriptGoogleTagManager()
-
 const recipePanelRef = ref()
 
 // 监听食材变化，自动检测相克
@@ -32,22 +30,11 @@ onMounted(() => {
   }
 })
 
-function toggleStuff(item: StuffItem, category = '', _e?: Event) {
+function toggleStuff(item: StuffItem, _e?: Event) {
   rStore.toggleStuff(item.name)
 
   if (curStuff.value.includes(item.name))
     playAnimation(item.emoji)
-
-  proxy.dataLayer.push({
-    event: 'click',
-    category: `${category}_${item.name}`,
-    action: 'click_stuff',
-    label: '食材',
-  })
-  proxy.dataLayer.push({
-    event: 'click_stuff',
-    action: item.name,
-  })
 }
 </script>
 
@@ -99,7 +86,7 @@ function toggleStuff(item: StuffItem, category = '', _e?: Event) {
         <VegetableTag
           v-for="item, i in vegetable" :key="i"
           :active="curStuff.includes(item.name)"
-          @click="toggleStuff(item, 'vegetable')"
+          @click="toggleStuff(item)"
         >
           <span v-if="item.emoji" class="inline-flex">{{ item.emoji }}</span>
           <span v-else-if="item.image" class="inline-flex">
@@ -117,7 +104,7 @@ function toggleStuff(item: StuffItem, category = '', _e?: Event) {
         <MeatTag
           v-for="item, i in meat" :key="i"
           :active="curStuff.includes(item.name)"
-          @click="toggleStuff(item, 'meat')"
+          @click="toggleStuff(item)"
         >
           <span>{{ item.emoji }}</span>
           <span m="l-1">{{ item.name }}</span>
@@ -132,7 +119,7 @@ function toggleStuff(item: StuffItem, category = '', _e?: Event) {
         <StapleTag
           v-for="item, i in staple" :key="i"
           :active="curStuff.includes(item.name)"
-          @click="toggleStuff(item, 'staple')"
+          @click="toggleStuff(item)"
         >
           <span>{{ item.emoji }}</span>
           <span m="l-1">{{ item.name }}</span>
