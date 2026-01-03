@@ -4,6 +4,10 @@
   li {
     list-style: disc;
   }
+
+  a {
+    border-bottom: 1px dashed #ddd;
+  }
 }
 
 blockquote {
@@ -29,8 +33,4 @@ ul {
   li {
     line-height: 2;
   }
-}
-
-a {
-  border-bottom: 1px dashed #ddd;
 }

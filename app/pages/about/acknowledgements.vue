@@ -4,7 +4,6 @@ import { acknowledgements, personalAcknowledgements } from '~/constants/acknowle
 
 // 图标映射表（提取为常量以提升性能）
 const ICON_MAP: Record<string, string> = {
-  github: 'i-ri-github-line',
   bilibili: 'i-ri-bilibili-line',
   weibo: 'i-ri-weibo-line',
   twitter: 'i-ri-twitter-x-line',
@@ -42,7 +41,7 @@ function getPersonKey(person: PersonalAcknowledgement, index: number): string {
     </div>
 
     <!-- 个人致谢名单 -->
-    <div class="mb-8">
+    <div v-if="personalAcknowledgements.length > 0" class="mb-8">
       <h3 class="mb-3 px-2 text-sm text-gray-400 tracking-wider uppercase">
         感谢以下朋友在项目早期的支持与帮助
       </h3>

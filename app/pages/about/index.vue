@@ -21,7 +21,7 @@ import { links } from '~/constants'
           <div class="text-gray-900 font-medium dark:text-gray-100">网页版本</div>
           <div class="flex items-center text-gray-500">
             <div i-ri-global-line class="mr-2" />
-            <span class="text-sm">cecil2.github.io/cook</span>
+            <span class="text-sm">cecil2.github.io/cook/</span>
           </div>
         </a>
       </div>

@@ -18,7 +18,7 @@ export interface Acknowledgement {
     /**
      * 链接类型（用于显示图标）
      */
-    type?: 'github' | 'bilibili' | 'weibo' | 'twitter' | 'wechat' | 'blog' | 'website' | 'email'
+    type?: 'bilibili' | 'weibo' | 'twitter' | 'wechat' | 'blog' | 'website' | 'email'
     /**
      * 显示文本
      */
@@ -64,17 +64,6 @@ export const acknowledgements: Acknowledgement[] = [
     ],
   },
   {
-    description: '感谢所有为本项目贡献代码、提出建议的开发者们',
-    links: [
-      {
-        type: 'github',
-        label: 'Contributors',
-        href: 'https://github.com/cecil2/cook/graphs/contributors',
-        target: '_blank',
-      },
-    ],
-  },
-  {
     description: '以下开源项目使得项目得以快速实现',
     links: [
       {
@@ -101,12 +90,6 @@ export const acknowledgements: Acknowledgement[] = [
         href: 'https://vueuse.org',
         target: '_blank',
       },
-      // 其他
-      {
-        type: 'website',
-        label: '其他',
-        href: 'https://github.com/YunYouJun/cook/blob/main/package.json',
-      },
     ],
   },
 ]
@@ -115,17 +98,4 @@ export const acknowledgements: Acknowledgement[] = [
  * 个人致谢名单
  */
 export const personalAcknowledgements: PersonalAcknowledgement[] = [
-  {
-    name: 'Runny',
-    link: 'https://weibo.com/runny',
-  },
-  {
-    name: '麒麟',
-  },
-  {
-    name: '晴方啾',
-  },
-  {
-    name: '课代表阿伟',
-  },
 ]

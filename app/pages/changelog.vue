@@ -1,9 +1,4 @@
 <script setup lang="ts">
-import { links } from '~/constants'
-
-// help
-
-// :href="links.changelog" target="_blank"
 </script>
 
 <template>
@@ -31,17 +26,6 @@ import { links } from '~/constants'
             <li>全新原生界面 UI 适配</li>
             <li>新增历史记录和收藏功能</li>
           </ul>
-        </div>
-      </section>
-
-      <section>
-        <div class="border rounded bg-white divide-y dark:border-gray-700 dark:bg-gray-800 dark:divide-gray-700">
-          <a :href="links.changelog" target="_blank" class="flex items-center p-4 transition hover:bg-gray-50 dark:hover:bg-gray-700">
-            <span>开发日志</span>
-          </a>
-          <a :href="links.releaseNotes" target="_blank" class="flex items-center p-4 transition hover:bg-gray-50 dark:hover:bg-gray-700">
-            <span>Release Notes</span>
-          </a>
         </div>
       </section>
     </div>

@@ -10,12 +10,6 @@
         </li>
         <li>
           <div class="inline-flex items-center justify-center">
-            代码仓库：<a class="inline-flex items-center justify-center" href="https://github.com/cecil2/cook" target="_blank">
-              <div m="r-1" i-ri-github-line inline-flex />cecil2/cook</a>
-          </div>
-        </li>
-        <li>
-          <div class="inline-flex items-center justify-center">
             菜谱视频来源：
             <a class="inline-flex items-center text-sm text-blue-600 dark:text-blue-400" href="https://docs.qq.com/sheet/DQk1vdkhFV0twQVNS" target="_blank">
               <div m="r-1" i-ri-bilibili-line inline-flex />

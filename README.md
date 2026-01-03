@@ -6,7 +6,7 @@
 
 ## 部署与访问
 
-本项目已部署在 GitHub Pages：[https://cecil2.github.io/cook/](https://cecil2.github.io/cook/)
+本项目已部署：[https://cecil2.github.io/cook/](https://cecil2.github.io/cook/)
 
 ## 开发
 
@@ -23,15 +23,9 @@ pnpm convert
 pnpm dev
 ```
 
-## 部署
+## 自动部署
 
-### Vercel
-
-本项目支持一键部署到 Vercel。
-
-### GitHub Pages
-
-本项目配置了 GitHub Actions，推送到 `main` 分支后会自动部署到 GitHub Pages。
+推送到 `main` 分支后会自动部署。
 
 ## 许可证
 

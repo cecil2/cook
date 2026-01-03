@@ -14,10 +14,6 @@
     </div>
 
     <div class="mx-auto max-w-md w-full rounded-2xl p-2 text-left">
-      <FAQItem title="未来计划？">
-        计划增加新功能，如自定义菜谱，与使用其他用户分享的菜谱。
-      </FAQItem>
-
       <FAQItem title="什么是模式？">
         <ul class="list-disc pl-5 space-y-1">
           <li><b>模糊匹配</b>：展示所有含当前选中任意食材的菜谱</li>
@@ -30,19 +26,6 @@
         <div class="inline-flex items-center justify-center">
           点击顶部 <div i-mdi-pot-steam-outline class="mx-1 inline-block" /> 图标即可。
         </div>
-      </FAQItem>
-
-      <FAQItem title="是否有微信小程序?">
-        因不可抗力下架。
-        将不再提供小程序版本。
-      </FAQItem>
-
-      <FAQItem title="是否有 APP?">
-        <b>本项目主要以 Web 形式提供服务。</b>
-      </FAQItem>
-
-      <FAQItem title="未来是否会收费？">
-        该项目将以免费开源的形式运营。
       </FAQItem>
 
       <FAQItem title="页面无法点击、资源加载失败？">
@@ -71,10 +54,6 @@
           </li>
         </ol>
       </FAQItem>
-
-      <hr class="my-8 h-px border-0 bg-gray-200 dark:bg-gray-700">
-
-      <HelpAbout />
     </div>
   </div>
 </template>
